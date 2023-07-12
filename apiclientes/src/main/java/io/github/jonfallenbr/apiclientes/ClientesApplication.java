@@ -12,6 +12,15 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class ClientesApplication {
 
+
+    public static void main(String[] args) {
+
+        SpringApplication.run(ClientesApplication.class, args);
+    }
+}
+
+
+/*
     @Bean
     public CommandLineRunner run(@Autowired ClienteRepository repository){
         return args -> {
@@ -19,9 +28,4 @@ public class ClientesApplication {
             repository.save(cliente); // Comando para Salvar o cliente no Banco de Dados
         };
     }
-
-    public static void main(String[] args) {
-
-        SpringApplication.run(ClientesApplication.class, args);
-    }
-}
+ */

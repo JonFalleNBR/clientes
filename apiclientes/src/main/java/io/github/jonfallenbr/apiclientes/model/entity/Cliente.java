@@ -1,6 +1,7 @@
 package io.github.jonfallenbr.apiclientes.model.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 
@@ -25,6 +26,7 @@ public class Cliente {
     private String cpf;
 
     @Column(name = "data_cadastro" )
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataCadastro;
 
     @PrePersist
@@ -32,3 +34,9 @@ public class Cliente {
         setDataCadastro(LocalDate.now());
     }
 }
+
+/*
+Pesquisar sobre PrePersist, uso correto do Builder e Anotação de Bean na classe MainApplication,
+onde supostamente é feito uma instancia de Dados de forma mais dinamica
+
+ */
