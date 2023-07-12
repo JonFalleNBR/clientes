@@ -1,9 +1,7 @@
 package io.github.jonfallenbr.apiclientes.model.entity;
 
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 
 import javax.persistence.*;
@@ -11,6 +9,9 @@ import java.time.LocalDate;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Cliente {
 
     @Id
@@ -26,6 +27,8 @@ public class Cliente {
     @Column(name = "data_cadastro" )
     private LocalDate dataCadastro;
 
-
-
+    @PrePersist
+    public void PrePersist(){
+        setDataCadastro(LocalDate.now());
+    }
 }
