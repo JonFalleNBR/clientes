@@ -38,3 +38,6 @@ public class ApplicationControllerAdvice {
          return new ResponseEntity(apiErrors, codigoStatus);
     }
 }
+/*
+   Validação do retorno do tratamento de erros, chamando a classe ApiErrors (linha 24), e colocando dentro de uma lista ordenada e retornando de forma organizada e concatenada
+ */

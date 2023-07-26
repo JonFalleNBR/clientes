@@ -3,11 +3,9 @@ package io.github.jonfallenbr.apiclientes.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
-import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
@@ -43,5 +41,8 @@ public class Cliente {
 /*
 Pesquisar sobre PrePersist, uso correto do Builder e Anotação de Bean na classe MainApplication,
 onde supostamente é feito uma instancia de Dados de forma mais dinamica
+
+
+A anotação NotEmpty chama a interpolação de mensagens de erro do File Messages.properties, entregando uma mensagem de erro mais clara para o usuario
 
  */

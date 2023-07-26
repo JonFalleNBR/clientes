@@ -18,3 +18,7 @@ public class ApiErrors {
         this.errors = Arrays.asList(message);
     }
 }
+
+/*
+    Tratamento de erros em um Array de mensagens para melhor visualização do usuário
+ */

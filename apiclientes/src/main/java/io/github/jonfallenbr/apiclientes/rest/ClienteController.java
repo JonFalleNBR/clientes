@@ -57,4 +57,8 @@ public class ClienteController {
                 .orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado"));
 
     }
+
+    /*
+    Classe com os endpoints que executam as tarefas necessarias para a funcionalidade de uma API, como excluir, atualizar e acharporId um determinado dado da tabela.
+     */
 }
