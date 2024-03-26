@@ -12,6 +12,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/clientes")
+@CrossOrigin("http://localhost:4200") // Permite mais de uma requisição HTTP, rodando tanto a API quanto a aplicação Front-End localmente sem gerar conflito - Anotação essencial no desenvolvimentos FullStack
 public class ClienteController {
 
     private final ClienteRepository repository;

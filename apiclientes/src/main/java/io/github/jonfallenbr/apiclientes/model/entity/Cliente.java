@@ -7,7 +7,7 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
-
+import javax.persistence.PrePersist;
 @Entity
 @Data
 @NoArgsConstructor
@@ -28,12 +28,12 @@ public class Cliente {
     //@CPF(message = "{campo.cpf.invalido}")
     private String cpf;
 
-    @Column(name = "data_cadastro",updatable = false )
+    @Column(name = "data_cadastro", updatable = false)
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataCadastro;
 
     @PrePersist
-    public void PrePersist(){
+    public void PrePersist() {
         setDataCadastro(LocalDate.now());
     }
 }
