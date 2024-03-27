@@ -3,6 +3,7 @@ package io.github.jonfallenbr.apiclientes.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
+import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -25,7 +26,7 @@ public class Cliente {
 
     @Column(nullable = false, length = 14)
     @NotEmpty(message = "{campo.cpf.obrigatorio}")
-    //@CPF(message = "{campo.cpf.invalido}")
+    @CPF(message = "{campo.cpf.invalido}") //Se atentar a essa anotation em caso de maiores problemas na validação
     private String cpf;
 
     @Column(name = "data_cadastro", updatable = false)
