@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/clientes")
-@CrossOrigin("http://localhost:4200") // Permite mais de uma requisição HTTP, rodando tanto a API quanto a aplicação Front-End localmente sem gerar conflito - Anotação essencial no desenvolvimentos FullStack
+//@CrossOrigin("http://localhost:4200") // Permite mais de uma requisição HTTP, rodando tanto a API quanto a aplicação Front-End localmente sem gerar conflito - Anotação essencial no desenvolvimentos FullStack
 public class ClienteController {
 
     private final ClienteRepository repository;
@@ -36,7 +36,7 @@ public class ClienteController {
 
 
     @GetMapping("{id}")
-    @CrossOrigin("*")
+   // @CrossOrigin("*")
     public Cliente AcharPorId(@PathVariable Integer id){
         return repository.findById(id).
                 orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado"));
