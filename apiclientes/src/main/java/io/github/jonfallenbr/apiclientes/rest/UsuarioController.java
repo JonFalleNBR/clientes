@@ -19,8 +19,6 @@ public class UsuarioController {
     @ResponseStatus(HttpStatus.CREATED)
     public void salvar(@RequestBody @Valid Usuario usuario){
         usuarioRepository.save(usuario);
-
-
     }
 
 }
