@@ -47,8 +47,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 /*
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) configuração dos Endpoints
 
+    public void configure(ClientDetailsServiceConfigurer clients) é de extrema importancia pois permite o acesso de outras aplicações, como do front end para acessar as configs de acesso e autenticação que estão aqui sendo estabelecidas
 
-  public void configure(ClientDetailsServiceConfigurer clients) é de extrema importancia pois permite o acesso de outras aplicações, como do front end para acessar as configs de acesso e autenticação que estão aqui sendo estabelecidas
-
- Esse metodo padroniza as configurações de token que geralmente vem de maneira aleatoria quando subimos a aplicação e precisamos jogar no Postman ou Swagger
+    Esse metodo padroniza as configurações de token que geralmente vem de maneira aleatoria quando subimos a aplicação e precisamos jogar no Postman ou Swagger afim de testarmos a funcionalidade da aplicação
  */
