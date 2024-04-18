@@ -1,5 +1,6 @@
 package io.github.jonfallenbr.apiclientes.service;
 
+import io.github.jonfallenbr.apiclientes.exception.UsuarioCadastradoException;
 import io.github.jonfallenbr.apiclientes.model.entity.Usuario;
 import io.github.jonfallenbr.apiclientes.model.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,14 @@ public class UsuarioService implements UserDetailsService {
 
     @Autowired
     UsuarioRepository usuarioRepository;
+
+    public Usuario salvar(Usuario usuario){
+        boolean exists = usuarioRepository.existsByUsername(usuario.getUsername());
+        if(exists){
+            throw new UsuarioCadastradoException((usuario.getUsername()));
+        }
+        return usuarioRepository.save(usuario);
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
