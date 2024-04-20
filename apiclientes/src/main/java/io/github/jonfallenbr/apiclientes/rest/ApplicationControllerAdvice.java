@@ -32,7 +32,7 @@ public class ApplicationControllerAdvice {
 
     @ExceptionHandler(ResponseStatusException.class)
     public ResponseEntity handleResponseStatusException(ResponseStatusException ex){
-         String mensagemErro = ex.getMessage();
+         String mensagemErro = ex.getReason(); // retira o httpStatus BAD.REQUEST da mensagem pro usuario no template, recomendado no lugar do getMessage
          HttpStatus codigoStatus = ex.getStatus();
          ApiErrors apiErrors= new ApiErrors(mensagemErro);
          return new ResponseEntity(apiErrors, codigoStatus);
