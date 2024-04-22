@@ -15,13 +15,13 @@ public class WebConfig {
 
     @Bean
     public FilterRegistrationBean<CorsFilter> corsFilterFilterRegistrationBean(){
-        CorsConfiguration corsConfiguration = new CorsConfiguration();
-        List<String> allowedOrigins = Arrays.asList("http://localhost:4200");
+        List<String> all = Arrays.asList("*");
 
-        corsConfiguration.setAllowedOrigins(allowedOrigins);
-        corsConfiguration.setAllowedHeaders(Arrays.asList("Origin", "Content-Type", "Accept"));
-        corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-        corsConfiguration.setAllowCredentials(true);
+        CorsConfiguration corsConfiguration = new CorsConfiguration();
+        corsConfiguration.setAllowedOrigins(all);
+        corsConfiguration.setAllowedHeaders(all);
+        corsConfiguration.setAllowedMethods(all);
+        corsConfiguration.setAllowCredentials(false);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", corsConfiguration);
